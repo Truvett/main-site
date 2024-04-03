@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Typography, IconButton, Button } from "@material-tailwind/react";
-import logo from '../../public/Images/logo.png';
+import whiteLogo from '../../public/Images/whiteLogo.png';
 
 const LINKS = ["Home", "About Us", "Services", "Our Work", "Contact Us"];
 const CURRENT_YEAR = new Date().getFullYear();
@@ -10,9 +10,9 @@ export function Footer() {
   return (
     <footer className="mt-10 bg-gray-900 px-8 pt-12">
       <div className="container mx-auto">
-        <div className="flex flex-wrap justify-center gap-8 md:justify-between">
-          <div className="text-center md:text-left">
-          <Image src={logo} alt={""} height={500} width={500} className="h-10 w-fit"/>
+        <div className="flex flex-wrap justify-center gap-8 ">
+          <div className="text-center md:text-left flex justify-center items-center flex-col">
+          <Image src={whiteLogo} alt={""} height={500} width={500} className="h-10 w-fit mb-5"/>
             <Typography placeholder={''} onPointerEnterCapture={''} onPointerLeaveCapture={''} color="white" className="mb-12 font-normal">
             Web Design & Development
             </Typography>
@@ -75,7 +75,7 @@ export function Footer() {
             &copy; {CURRENT_YEAR} TRUVETT, all right reserved 
           </Typography>
 
-          <div className="flex gap-2">
+          <div className="flex gap-2 items-center justify-center">
             <IconButton placeholder={''} onPointerEnterCapture={''} onPointerLeaveCapture={''} variant="text" color="white">
               <i className="fa-brands fa-twitter text-2xl not-italic opacity-75"></i>
             </IconButton>
@@ -88,9 +88,9 @@ export function Footer() {
             {/* <IconButton placeholder={''} onPointerEnterCapture={''} onPointerLeaveCapture={''} variant="text" color="white">
               <i className="fa-brands fa-github text-2xl not-italic opacity-75"></i>
             </IconButton> */}
-            <IconButton  placeholder={''} onPointerEnterCapture={''} onPointerLeaveCapture={''}   variant="text" color="gray" size="sm">
+            {/* <IconButton  placeholder={''} onPointerEnterCapture={''} onPointerLeaveCapture={''}   variant="text" color="gray" size="sm">
               <i className="fa-brands fa-instagram text-base" />
-            </IconButton>
+            </IconButton> */}
           </div>
         </div>
       </div>

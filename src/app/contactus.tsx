@@ -10,7 +10,7 @@ import Link from 'next/link';
 export function ContactUs() {
 	return (
 		<section className="px-8 py-8 lg:py-16">
-			<div className="container mx-auto text-center">
+			<div className="container mx-auto md:text-center">
 				<Typography
 					placeholder={''}
 					onPointerEnterCapture={''}
@@ -31,13 +31,13 @@ export function ContactUs() {
 					for technical assistance, or suggestions for improvement,
 					our team is eager to hear from you.
 				</Typography>
-				<div className="grid grid-cols-1 gap-x-12 gap-y-6 lg:grid-cols-2 items-center px-20">
+				<div className="grid grid-cols-1 md:gap-x-12 gap-y-6 lg:grid-cols-2 items-center md:px-20">
 					<Image
 						width={500}
 						height={500}
 						src="/Images/contact.jpg"
 						alt="contact"
-						className="w-full h-full lg:max-h-[510px]"
+						className="w-full h-full lg:max-h-[510px] hidden md:block"
 					/>
 					<div className="flex justify-start flex-col gap-5 items-start">
 						<div className="flex justify-start gap-5 items-center">

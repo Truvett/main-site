@@ -71,8 +71,8 @@ export function Work() {
 		},
 	];
 	return (
-		<section className="py-20 px-8">
-			<div className="container mx-auto mb-20 text-center">
+		<section className="py-10 lg:py-28 px-8">
+			<div className="container mx-auto md:mb-20 md:text-center">
 				<Typography
 					placeholder={''}
 					onPointerEnterCapture={''}
@@ -85,7 +85,7 @@ export function Work() {
 				</Typography>
 			</div>
 
-			<div className="grid gap-5 grid-col-1 md:grid-cols-3 place-items-center justify-center ">
+			<div className="grid gap-5 grid-col-1 md:grid-cols-2 lg:grid-cols-3 place-items-center justify-center ">
 				{worksDetails.map(({ title, description, image, link }) => (
 					<WorkCard
 						key={title}

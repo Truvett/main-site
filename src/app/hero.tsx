@@ -7,7 +7,7 @@ function Hero() {
 	return (
 		<div className="relative min-h-screen w-full">
 			<header className="grid !min-h-[49rem] bg-gray-900 px-8">
-				<div className="container mx-auto mt-32 grid h-full w-full grid-cols-1 place-items-center lg:mt-14 lg:grid-cols-2">
+				<div className="container mx-auto  md:mt-32 grid h-full w-full grid-cols-1 place-items-center lg:mt-14 lg:grid-cols-2">
 					<div className="col-span-1">
 						<Typography
 							placeholder={''}
@@ -53,18 +53,16 @@ function Hero() {
 							</Button>
 						</div>
 					</div>
-					{/* <div className=' max-h-[30rem] translate-y-56 md:max-h-[36rem] lg:my-0 lg:ml-auto lg:max-h-[100rem] h-full'> */}
-						<Image
-							width={1000}
-							height={1000}
-							src="/Images/hero.png"
-							alt="team work"
-							className="col-span-1 my-20 w-fit max-h-[30rem] translate-y-56 md:max-h-[36rem] lg:my-0 lg:ml-auto lg:max-h-[40rem] h-full object-fill object-center lg:translate-y-0"
-						/>
-					{/* </div> */}
+					<Image
+						width={1000}
+						height={1000}
+						src="/Images/hero.png"
+						alt="team work"
+						className="col-span-1 my-20 w-fit max-h-[30rem] md:max-h-[36rem] lg:my-0 lg:ml-auto lg:max-h-[40rem] h-full object-fill object-center lg:translate-y-0 hidden md:block"
+					/>
 				</div>
 			</header>
-			<div className="mx-8 lg:mx-16 -mt-24 rounded-xl bg-white p-5 md:p-14 shadow-md">
+			<div className="md:mx-8 lg:mx-16 md:mt-24 lg:-mt-24 rounded-xl bg-white p-5 md:p-14 md:shadow-md">
 				<div>
 					<Typography
 						variant="h3"

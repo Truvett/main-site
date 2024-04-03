@@ -21,7 +21,7 @@ interface workCardProps {
 export function WorkCard({ title, children, image, link }: workCardProps) {
 	return (
 		<Card
-			className="mt-6 w-96 h-96"
+			className="mt-6 w-full h-96"
 			placeholder={''}
 			onPointerEnterCapture={''}
 			onPointerLeaveCapture={''}
@@ -31,17 +31,17 @@ export function WorkCard({ title, children, image, link }: workCardProps) {
 				onPointerEnterCapture={''}
 				onPointerLeaveCapture={''}
 				color="blue-gray"
-				className="relative h-auto object-fit object-center"
+				className="relative h-auto object-fit object-center "
 			>
 				<Image
 					width={3000}
 					height={3000}
 					src={image}
 					alt="card-image"
-					className="object-cover object-center w-full"
+					className="object-container object-center w-full"
 				/>
 			</CardHeader>
-			<CardBody
+			<CardBody className=''
 				placeholder={''}
 				onPointerEnterCapture={''}
 				onPointerLeaveCapture={''}

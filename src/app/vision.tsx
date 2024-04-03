@@ -38,15 +38,15 @@ const FEATURES = [
 
 export function Vision() {
   return (
-    <section className="py-28 px-4">
-      <div className="container mx-auto mb-20 text-center">
+    <section className="py-10 md:py-28 px-4">
+      <div className="container mx-auto mb-20  md:text-center">
        
         <Typography  placeholder={''} onPointerEnterCapture={''} onPointerLeaveCapture={''}   variant="h1" color="blue-gray" className="mb-4">
         Our  Vision
         </Typography>
         <Typography  placeholder={''} onPointerEnterCapture={''} onPointerLeaveCapture={''}  
           variant="lead"
-          className="mx-auto w-full px-4 !text-gray-500 lg:w-11/12 lg:px-8 "
+          className="mx-auto w-full md:px-4 !text-gray-500 lg:w-11/12 lg:px-8 "
         >
          &ldquo;Our vision at Truvett Web Design & Development Company is to make the internet a better place, one website at a time. We aim to create beautiful and user-friendly websites that help businesses thrive online. Our goal is to be a trusted partner for companies of all sizes, providing them with the tools they need to succeed in the digital world.&ldquo;
         </Typography>

@@ -12,7 +12,7 @@ interface InfoCardProps {
 
 export function InfoCard({ title, children, image }: InfoCardProps) {
   return (
-    <Card  className="mt-6 w-96 h-96" placeholder={''} onPointerEnterCapture={''} onPointerLeaveCapture={''}>
+    <Card  className="mt-6 w-full h-96" placeholder={''} onPointerEnterCapture={''} onPointerLeaveCapture={''}>
     <CardHeader placeholder={''} onPointerEnterCapture={''} onPointerLeaveCapture={''} color="blue-gray" className="relative h-56 ">
       <Image width={3000} height={3000}
         src={image}

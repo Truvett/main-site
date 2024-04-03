@@ -46,15 +46,15 @@ export function Services() {
     },
   ];
   return (
-    <section className="py-20 px-8">
-      <div className="container mx-auto mb-20 text-center">
+    <section className="py-10 lg:py-28 px-8">
+      <div className="container mx-auto md:mb-20 md:text-center">
        
        <Typography  placeholder={''} onPointerEnterCapture={''} onPointerLeaveCapture={''}   variant="h1" color="blue-gray" className="mb-4">
         Our Services
        </Typography>
       </div>
       
-          <div className="grid gap-5 grid-col-1 md:grid-cols-3 place-items-center justify-center ">
+          <div className="grid gap-5 grid-col-1 md:grid-cols-2 lg:grid-cols-3 lg: place-items-center justify-center ">
             {service.map(({ title, description, image }) => (
               <InfoCard key={title} title={title} image={image}>
                 {description}
