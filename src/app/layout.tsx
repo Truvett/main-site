@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { FixedPlugin, Layout } from "@/components";
+import { Analytics } from "@vercel/analytics/react";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -11,8 +12,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "TRUVETT",
-  description:
-    "Web Design & Development",
+  description: "Web Design & Development",
 };
 
 export default function RootLayout({
@@ -30,12 +30,17 @@ export default function RootLayout({
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
-        <link rel="shortcut icon" href="/Images/logoIcon.png" type="image/png" />
+        <link
+          rel="shortcut icon"
+          href="/Images/logoIcon.png"
+          type="image/png"
+        />
       </head>
       <body className={roboto.className}>
         <Layout>
           {children}
           {/* <FixedPlugin /> */}
+          <Analytics />
         </Layout>
       </body>
     </html>
