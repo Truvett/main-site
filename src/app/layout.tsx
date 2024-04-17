@@ -36,15 +36,6 @@ export default function RootLayout({
           type="image/png"
         />
       </head>
-      <!-- Google tag (gtag.js) -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-C2102LW386"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-      
-        gtag('config', 'G-C2102LW386');
-      </script>
       <body className={roboto.className}>
         <Layout>
           {children}
