@@ -1,110 +1,111 @@
-import React from 'react';
+import React from "react";
 import {
-	Navbar as MTNavbar,
-	Collapse,
-	IconButton,
-	Typography,
-	Button,
-} from '@material-tailwind/react';
-import Image from 'next/image';
-import logo from '../../public/Images/logo.png';
-import whiteLogo from '../../public/Images/whiteLogo.png';
-import { FaBars } from 'react-icons/fa';
-import { RxCross2 } from 'react-icons/rx';
-import { FaLinkedinIn } from 'react-icons/fa';
+  Navbar as MTNavbar,
+  Collapse,
+  IconButton,
+  Typography,
+  Button,
+} from "@material-tailwind/react";
+import Image from "next/image";
+import logo from "../../public/Images/logo.png";
+import whiteLogo from "../../public/Images/whiteLogo.png";
+import { FaBars } from "react-icons/fa";
+import { RxCross2 } from "react-icons/rx";
+import { FaLinkedinIn } from "react-icons/fa";
 
 interface NavItemProps {
-	children: React.ReactNode;
-	href?: string;
+  children: React.ReactNode;
+  href?: string;
 }
 function NavItem({ children, href }: NavItemProps) {
-	return (
-		<li>
-			<Typography
-				placeholder={''}
-				onPointerEnterCapture={''}
-				onPointerLeaveCapture={''}
-				as="a"
-				href={href || '#'}
-				target={href ? '_blank' : '_self'}
-				variant="small"
-				className="font-medium"
-			>
-				{children}
-			</Typography>
-		</li>
-	);
+  return (
+    <li>
+      <Typography
+        placeholder={""}
+        onPointerEnterCapture={""}
+        onPointerLeaveCapture={""}
+        as="a"
+        href={href || "#"}
+        target={"_self"}
+        variant="small"
+        className="font-medium"
+      >
+        {children}
+      </Typography>
+    </li>
+  );
 }
 
 export function Navbar() {
-	const [open, setOpen] = React.useState(false);
-	const [isScrolling, setIsScrolling] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
+  const [isScrolling, setIsScrolling] = React.useState(false);
 
-	function handleOpen() {
-		setOpen((cur) => !cur);
-	}
+  function handleOpen() {
+    setOpen((cur) => !cur);
+  }
 
-	React.useEffect(() => {
-		window.addEventListener(
-			'resize',
-			() => window.innerWidth >= 960 && setOpen(false)
-		);
-	}, []);
+  React.useEffect(() => {
+    window.addEventListener(
+      "resize",
+      () => window.innerWidth >= 960 && setOpen(false)
+    );
+  }, []);
 
-	React.useEffect(() => {
-		function handleScroll() {
-			if (window.scrollY > 0) {
-				setIsScrolling(true);
-			} else {
-				setIsScrolling(false);
-			}
-		}
+  React.useEffect(() => {
+    function handleScroll() {
+      if (window.scrollY > 0) {
+        setIsScrolling(true);
+      } else {
+        setIsScrolling(false);
+      }
+    }
 
-		window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-	return (
-		<MTNavbar
-			fullWidth
-			shadow={false}
-			blurred={false}
-			color={isScrolling ? 'white' : 'transparent'}
-			className="fixed top-0 z-50 border-0"
-			placeholder={''}
-			onPointerEnterCapture={''}
-			onPointerLeaveCapture={''}
-		>
-			<div className="container mx-auto flex items-center justify-between">
-				{isScrolling ?
-					<Image
-						src={logo}
-						alt={''}
-						height={500}
-						width={500}
-						className="h-10 w-fit"
-					/> :
-					<Image
-						src={whiteLogo}
-						alt={''}
-						height={500}
-						width={500}
-						className="h-10 w-fit"
-					/>
-				}
-				<ul
-					className={`ml-10 hidden items-center gap-6 lg:flex ${
-						isScrolling ? 'text-gray-900' : 'text-white'
-					}`}
-				>
-					<NavItem>Home</NavItem>
-					<NavItem>About Us</NavItem>
-					<NavItem>Services</NavItem>
-					<NavItem>Our Work</NavItem>
-					<NavItem>Contact Us</NavItem>
-				</ul>
-				{/* <div className="hidden gap-2 lg:flex lg:items-center">
+  return (
+    <MTNavbar
+      fullWidth
+      shadow={false}
+      blurred={false}
+      color={isScrolling ? "white" : "transparent"}
+      className="fixed top-0 z-50 border-0"
+      placeholder={""}
+      onPointerEnterCapture={""}
+      onPointerLeaveCapture={""}
+    >
+      <div className="container mx-auto flex items-center justify-between">
+        {isScrolling ? (
+          <Image
+            src={logo}
+            alt={""}
+            height={500}
+            width={500}
+            className="h-10 w-fit"
+          />
+        ) : (
+          <Image
+            src={whiteLogo}
+            alt={""}
+            height={500}
+            width={500}
+            className="h-10 w-fit"
+          />
+        )}
+        <ul
+          className={`ml-10 hidden items-center gap-6 lg:flex ${
+            isScrolling ? "text-gray-900" : "text-white"
+          }`}
+        >
+          <NavItem href="#">Home</NavItem>
+          <NavItem href="#about">About Us</NavItem>
+          <NavItem href="#service">Services</NavItem>
+          <NavItem href="#work">Our Work</NavItem>
+          <NavItem href="#contactus">Contact Us</NavItem>
+        </ul>
+        {/* <div className="hidden gap-2 lg:flex lg:items-center">
 					<IconButton
 						placeholder={''}
 						onPointerEnterCapture={''}
@@ -136,32 +137,32 @@ export function Navbar() {
 						<i className="fa-brands fa-instagram text-base" />
 					</IconButton>
 				</div> */}
-				<IconButton
-					placeholder={''}
-					onPointerEnterCapture={''}
-					onPointerLeaveCapture={''}
-					variant="text"
-					color={isScrolling ? 'gray' : 'white'}
-					onClick={handleOpen}
-					className="ml-auto inline-block lg:hidden"
-				>
-					{open ? (
-						<RxCross2 strokeWidth={2} className="h-6 w-6" />
-					) : (
-						<FaBars strokeWidth={2} className="h-6 w-6" />
-					)}
-				</IconButton>
-			</div>
-			<Collapse open={open}>
-				<div className="container mx-auto mt-4 rounded-lg border-t border-blue-gray-50 bg-white px-6 py-5">
-					<ul className="flex flex-col gap-4 text-blue-gray-900">
-						<NavItem>Home</NavItem>
-						<NavItem>About Us</NavItem>
-						<NavItem>Services</NavItem>
-						<NavItem>Our Work</NavItem>
-						<NavItem>Contact Us</NavItem>
-					</ul>
-					{/* <div className="hidden gap-2 lg:flex lg:items-center">
+        <IconButton
+          placeholder={""}
+          onPointerEnterCapture={""}
+          onPointerLeaveCapture={""}
+          variant="text"
+          color={isScrolling ? "gray" : "white"}
+          onClick={handleOpen}
+          className="ml-auto inline-block lg:hidden"
+        >
+          {open ? (
+            <RxCross2 strokeWidth={2} className="h-6 w-6" />
+          ) : (
+            <FaBars strokeWidth={2} className="h-6 w-6" />
+          )}
+        </IconButton>
+      </div>
+      <Collapse open={open}>
+        <div className="container mx-auto mt-4 rounded-lg border-t border-blue-gray-50 bg-white px-6 py-5">
+          <ul className="flex flex-col gap-4 text-blue-gray-900">
+            <NavItem href="#">Home</NavItem>
+            <NavItem href="#about">About Us</NavItem>
+            <NavItem href="#service">Services</NavItem>
+            <NavItem href="#work">Our Work</NavItem>
+            <NavItem href="#contactus">Contact Us</NavItem>
+          </ul>
+          {/* <div className="hidden gap-2 lg:flex lg:items-center">
 					<IconButton
 						placeholder={''}
 						onPointerEnterCapture={''}
@@ -193,10 +194,10 @@ export function Navbar() {
 						<i className="fa-brands fa-instagram text-base" />
 					</IconButton>
 				</div> */}
-				</div>
-			</Collapse>
-		</MTNavbar>
-	);
+        </div>
+      </Collapse>
+    </MTNavbar>
+  );
 }
 
 export default Navbar;
