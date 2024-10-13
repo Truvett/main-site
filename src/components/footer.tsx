@@ -1,9 +1,16 @@
 "use client";
 import Image from "next/image";
 import { Typography, IconButton, Button } from "@material-tailwind/react";
-import whiteLogo from '../../public/Images/whiteLogo.png';
+import whiteLogo from "../../public/Images/whiteLogo.png";
+import { title } from "process";
 
-const LINKS = ["Home", "About Us", "Services", "Our Work", "Contact Us"];
+const LINKS = [
+  { title: "Home", link: "#" },
+  { title: "About Us", link: "#about" },
+  { title: "Services", link: "#service" },
+  { title: "Our Work", link: "#work" },
+  { title: "Contact Us", link: "#contactus" },
+];
 const CURRENT_YEAR = new Date().getFullYear();
 
 export function Footer() {
@@ -12,22 +19,37 @@ export function Footer() {
       <div className="container mx-auto">
         <div className="flex flex-wrap justify-center gap-8 ">
           <div className="text-center md:text-left flex justify-center items-center flex-col">
-          <Image src={whiteLogo} alt={""} height={500} width={500} className="h-10 w-fit mb-5"/>
-            <Typography placeholder={''} onPointerEnterCapture={''} onPointerLeaveCapture={''} color="white" className="mb-12 font-normal">
-            Web Design & Development
+            <Image
+              src={whiteLogo}
+              alt={""}
+              height={500}
+              width={500}
+              className="h-10 w-fit mb-5"
+            />
+            <Typography
+              placeholder={""}
+              onPointerEnterCapture={""}
+              onPointerLeaveCapture={""}
+              color="white"
+              className="mb-12 font-normal"
+            >
+              Web Design & Development
             </Typography>
             <ul className="flex flex-wrap items-center justify-center md:justify-start">
               {LINKS.map((link, idx) => (
-                <li key={link}>
-                  <Typography placeholder={''} onPointerEnterCapture={''} onPointerLeaveCapture={''}
+                <li key={idx}>
+                  <Typography
+                    placeholder={""}
+                    onPointerEnterCapture={""}
+                    onPointerLeaveCapture={""}
                     as="a"
-                    href="#"
+                    href={link.link}
                     color="white"
                     className={`py-1 font-medium transition-colors ${
                       idx === 0 ? "pr-3" : "px-3"
                     }`}
                   >
-                    {link}
+                    {link.title}
                   </Typography>
                 </li>
               ))}
@@ -68,21 +90,42 @@ export function Footer() {
           </div> */}
         </div>
         <div className="mt-16 flex flex-wrap items-center justify-center gap-y-4 gap-x-8 border-t border-gray-700 py-7 md:justify-between">
-          <Typography placeholder={''} onPointerEnterCapture={''} onPointerLeaveCapture={''}
+          <Typography
+            placeholder={""}
+            onPointerEnterCapture={""}
+            onPointerLeaveCapture={""}
             color="white"
             className="text-center font-normal opacity-75"
           >
-            &copy; {CURRENT_YEAR} TRUVETT, all right reserved 
+            &copy; {CURRENT_YEAR} TRUVETT, all right reserved
           </Typography>
 
           <div className="flex gap-2 items-center justify-center">
-            <IconButton placeholder={''} onPointerEnterCapture={''} onPointerLeaveCapture={''} variant="text" color="white">
+            <IconButton
+              placeholder={""}
+              onPointerEnterCapture={""}
+              onPointerLeaveCapture={""}
+              variant="text"
+              color="white"
+            >
               <i className="fa-brands fa-twitter text-2xl not-italic opacity-75"></i>
             </IconButton>
-            <IconButton placeholder={''} onPointerEnterCapture={''} onPointerLeaveCapture={''} variant="text" color="white">
+            <IconButton
+              placeholder={""}
+              onPointerEnterCapture={""}
+              onPointerLeaveCapture={""}
+              variant="text"
+              color="white"
+            >
               <i className="fa-brands fa-linkedin text-2xl not-italic opacity-75"></i>
             </IconButton>
-            <IconButton placeholder={''} onPointerEnterCapture={''} onPointerLeaveCapture={''} variant="text" color="white">
+            <IconButton
+              placeholder={""}
+              onPointerEnterCapture={""}
+              onPointerLeaveCapture={""}
+              variant="text"
+              color="white"
+            >
               <i className="fa-brands fa-facebook text-2xl not-italic opacity-75"></i>
             </IconButton>
             {/* <IconButton placeholder={''} onPointerEnterCapture={''} onPointerLeaveCapture={''} variant="text" color="white">
