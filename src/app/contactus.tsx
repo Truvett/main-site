@@ -58,11 +58,11 @@ export function ContactUs() {
                 <IoCall className="h-6 w-6" />
               </div>
               <Link
-                href="tel:8320440504"
+                href="tel:9909089796"
                 target="_blank"
                 className="text-lg font-medium"
               >
-                +91 8320440504
+                +91 9909089796
               </Link>
             </div>
             <div className="flex justify-start gap-5 items-center">
@@ -70,11 +70,11 @@ export function ContactUs() {
                 <IoLogoWhatsapp className="h-6 w-6" />
               </div>
               <Link
-                href="https://wa.me/8320440504"
+                href="https://wa.me/9909089796"
                 target="_blank"
                 className="text-lg font-medium"
               >
-                +91 8320440504
+                +91 9909089796
               </Link>
             </div>
           </div>
