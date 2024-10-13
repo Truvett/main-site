@@ -38,26 +38,30 @@ function Hero() {
             </Typography>
 
             <div className="flex flex-col gap-2 md:mb-2 md:w-10/12 md:flex-row">
-              <Button
-                placeholder={""}
-                onPointerEnterCapture={""}
-                onPointerLeaveCapture={""}
-                size="lg"
-                color="white"
-                className="flex justify-center items-center gap-3 uppercase"
-              >
-                Our Work
-              </Button>
-              <Button
-                placeholder={""}
-                onPointerEnterCapture={""}
-                onPointerLeaveCapture={""}
-                size="lg"
-                color="white"
-                className="flex justify-center items-center gap-3 uppercase"
-              >
-                Contact us
-              </Button>
+              <a href="#work">
+                <Button
+                  placeholder={""}
+                  onPointerEnterCapture={""}
+                  onPointerLeaveCapture={""}
+                  size="lg"
+                  color="white"
+                  className="flex justify-center items-center gap-3 uppercase"
+                >
+                  Our Work
+                </Button>
+              </a>
+              <a href="#contactus">
+                <Button
+                  placeholder={""}
+                  onPointerEnterCapture={""}
+                  onPointerLeaveCapture={""}
+                  size="lg"
+                  color="white"
+                  className="flex justify-center items-center gap-3 uppercase"
+                >
+                  Contact us
+                </Button>
+              </a>
             </div>
           </div>
           {/* <Image

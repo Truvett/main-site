@@ -17,7 +17,7 @@ export function ContactUs() {
           onPointerLeaveCapture={""}
           variant="h1"
           color="blue-gray"
-          className="!text-3xl lg:!text-5xl"
+          className="!text-3xl lg:!text-5xl mb-4"
         >
           Contact Us
         </Typography>
