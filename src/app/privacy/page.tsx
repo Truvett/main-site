@@ -182,7 +182,7 @@ export default function PrivacyPolicy() {
                 onPointerLeaveCapture={""}
                 className="text-gray-300"
               >
-                We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.
+                We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last Updated&quot; date.
               </Typography>
             </section>
 

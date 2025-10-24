@@ -20,7 +20,7 @@ function Hero() {
           </Typography>
           <div className="hidden md:flex items-center gap-8">
             <a href="#about" className="text-gray-300 hover:text-white transition-colors duration-300">About</a>
-            <a href="#building" className="text-gray-300 hover:text-white transition-colors duration-300">What We're Building</a>
+            <a href="#building" className="text-gray-300 hover:text-white transition-colors duration-300">What We&apos;re Building</a>
             <a href="#contactus" className="text-gray-300 hover:text-white transition-colors duration-300">Contact</a>
           </div>
         </div>

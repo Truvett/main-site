@@ -69,7 +69,7 @@ export default function CancellationRefund() {
               onPointerLeaveCapture={""}
               className="text-gray-300"
             >
-              In case of any Refunds approved by Truvett Solutions LLP, it'll take 3-5 days for the refund to be processed to the end customer.
+              In case of any Refunds approved by Truvett Solutions LLP, it&apos;ll take 3-5 days for the refund to be processed to the end customer.
             </Typography>
           </div>
         </div>
