@@ -1,41 +1,60 @@
 "use client";
-import Image from "next/image";
-import { Typography, IconButton, Button } from "@material-tailwind/react";
-import whiteLogo from "../../public/Images/whiteLogo.png";
-import { title } from "process";
+import { Typography, IconButton } from "@material-tailwind/react";
 
 const LINKS = [
-  { title: "Home", link: "#" },
-  { title: "About Us", link: "#about" },
-  { title: "Services", link: "#service" },
-  { title: "Our Work", link: "#work" },
-  { title: "Contact Us", link: "#contactus" },
+  { title: "Home", link: "/" },
+  { title: "About", link: "/#about" },
+  { title: "What We're Building", link: "/#building" },
+  { title: "Contact", link: "/#contactus" },
+];
+
+const LEGAL_LINKS = [
+  { title: "Terms & Conditions", link: "/terms" },
+  { title: "Privacy Policy", link: "/privacy" },
+  { title: "Cancellation & Refund", link: "/cancellation-refund" },
+  { title: "Shipping & Exchange", link: "/shipping-exchange" },
+  { title: "Contact Us", link: "/contact-info" },
 ];
 const CURRENT_YEAR = new Date().getFullYear();
 
 export function Footer() {
   return (
-    <footer className="mt-10 bg-gray-900 px-8 pt-12">
+    <footer className="mt-10 bg-black border-t border-gray-800 px-8 pt-12">
       <div className="container mx-auto">
-        <div className="flex flex-wrap justify-center gap-8 ">
-          <div className="text-center md:text-left flex justify-center items-center flex-col">
-            <Image
-              src={whiteLogo}
-              alt={""}
-              height={500}
-              width={500}
-              className="h-10 w-fit mb-5"
-            />
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
+          {/* Brand Section */}
+          <div className="text-center md:text-left">
             <Typography
               placeholder={""}
               onPointerEnterCapture={""}
               onPointerLeaveCapture={""}
-              color="white"
-              className="mb-12 font-normal"
+              variant="h5"
+              className="text-white font-bold mb-4 tracking-wide"
             >
-              Web Design & Development
+              TRUVETT SOLUTIONS
             </Typography>
-            <ul className="flex flex-wrap items-center justify-center md:justify-start">
+            <Typography
+              placeholder={""}
+              onPointerEnterCapture={""}
+              onPointerLeaveCapture={""}
+              className="text-gray-400 font-normal mb-4"
+            >
+              Building the future of digital experiences
+            </Typography>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <Typography
+              placeholder={""}
+              onPointerEnterCapture={""}
+              onPointerLeaveCapture={""}
+              variant="h6"
+              className="text-white mb-4 font-bold"
+            >
+              Quick Links
+            </Typography>
+            <ul className="space-y-2">
               {LINKS.map((link, idx) => (
                 <li key={idx}>
                   <Typography
@@ -44,10 +63,36 @@ export function Footer() {
                     onPointerLeaveCapture={""}
                     as="a"
                     href={link.link}
-                    color="white"
-                    className={`py-1 font-medium transition-colors ${
-                      idx === 0 ? "pr-3" : "px-3"
-                    }`}
+                    className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                  >
+                    {link.title}
+                  </Typography>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal Links */}
+          <div>
+            <Typography
+              placeholder={""}
+              onPointerEnterCapture={""}
+              onPointerLeaveCapture={""}
+              variant="h6"
+              className="text-white mb-4 font-bold"
+            >
+              Legal
+            </Typography>
+            <ul className="space-y-2">
+              {LEGAL_LINKS.map((link, idx) => (
+                <li key={idx}>
+                  <Typography
+                    placeholder={""}
+                    onPointerEnterCapture={""}
+                    onPointerLeaveCapture={""}
+                    as="a"
+                    href={link.link}
+                    className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
                   >
                     {link.title}
                   </Typography>
@@ -89,7 +134,7 @@ export function Footer() {
             </div>
           </div> */}
         </div>
-        <div className="mt-16 flex flex-wrap items-center justify-center gap-y-4 gap-x-8 border-t border-gray-700 py-7 md:justify-between">
+        <div className="flex flex-wrap items-center justify-center gap-y-4 gap-x-8 border-t border-gray-800 py-7 md:justify-between">
           <Typography
             placeholder={""}
             onPointerEnterCapture={""}
@@ -101,33 +146,22 @@ export function Footer() {
           </Typography>
 
           <div className="flex gap-2 items-center justify-center">
-            <IconButton
-              placeholder={""}
-              onPointerEnterCapture={""}
-              onPointerLeaveCapture={""}
-              variant="text"
-              color="white"
+            <a
+              href="https://www.linkedin.com/company/truvett"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <i className="fa-brands fa-twitter text-2xl not-italic opacity-75"></i>
-            </IconButton>
-            <IconButton
-              placeholder={""}
-              onPointerEnterCapture={""}
-              onPointerLeaveCapture={""}
-              variant="text"
-              color="white"
-            >
-              <i className="fa-brands fa-linkedin text-2xl not-italic opacity-75"></i>
-            </IconButton>
-            <IconButton
-              placeholder={""}
-              onPointerEnterCapture={""}
-              onPointerLeaveCapture={""}
-              variant="text"
-              color="white"
-            >
-              <i className="fa-brands fa-facebook text-2xl not-italic opacity-75"></i>
-            </IconButton>
+              <IconButton
+                placeholder={""}
+                onPointerEnterCapture={""}
+                onPointerLeaveCapture={""}
+                variant="text"
+                color="white"
+              >
+                <i className="fa-brands fa-linkedin text-2xl not-italic opacity-75"></i>
+              </IconButton>
+            </a>
+      
             {/* <IconButton placeholder={''} onPointerEnterCapture={''} onPointerLeaveCapture={''} variant="text" color="white">
               <i className="fa-brands fa-github text-2xl not-italic opacity-75"></i>
             </IconButton> */}

@@ -1,12 +1,12 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Inter } from "next/font/google";
 import { FixedPlugin, Layout } from "@/components";
 import { Analytics } from "@vercel/analytics/react";
 
-const roboto = Roboto({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700", "900"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
@@ -36,7 +36,7 @@ export default function RootLayout({
           type="image/png"
         />
       </head>
-      <body className={roboto.className}>
+      <body className={inter.className}>
         <Layout>
           {children}
           {/* <FixedPlugin /> */}

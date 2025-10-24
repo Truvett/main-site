@@ -70,40 +70,27 @@ export function Navbar() {
       fullWidth
       shadow={false}
       blurred={false}
-      color={isScrolling ? "white" : "transparent"}
-      className="fixed top-0 z-50 border-0"
+      color="transparent"
+      className={`fixed top-0 z-50 border-0 transition-all duration-300 ${
+        isScrolling ? "bg-black/80 backdrop-blur-xl shadow-lg shadow-black/50" : ""
+      }`}
       placeholder={""}
       onPointerEnterCapture={""}
       onPointerLeaveCapture={""}
     >
       <div className="container mx-auto flex items-center justify-between">
-        {isScrolling ? (
-          <Image
-            src={logo}
-            alt={""}
-            height={500}
-            width={500}
-            className="h-10 w-fit"
-          />
-        ) : (
-          <Image
-            src={whiteLogo}
-            alt={""}
-            height={500}
-            width={500}
-            className="h-10 w-fit"
-          />
-        )}
-        <ul
-          className={`ml-10 hidden items-center gap-6 lg:flex ${
-            isScrolling ? "text-gray-900" : "text-white"
-          }`}
-        >
+        <Image
+          src={whiteLogo}
+          alt={""}
+          height={500}
+          width={500}
+          className="h-10 w-fit"
+        />
+        <ul className="ml-10 hidden items-center gap-6 lg:flex text-white">
           <NavItem href="#">Home</NavItem>
-          <NavItem href="#about">About Us</NavItem>
-          <NavItem href="#service">Services</NavItem>
-          <NavItem href="#work">Our Work</NavItem>
-          <NavItem href="#contactus">Contact Us</NavItem>
+          <NavItem href="#about">About</NavItem>
+          <NavItem href="#building">What We&apos;re Building</NavItem>
+          <NavItem href="#contactus">Contact</NavItem>
         </ul>
         {/* <div className="hidden gap-2 lg:flex lg:items-center">
 					<IconButton
@@ -142,7 +129,7 @@ export function Navbar() {
           onPointerEnterCapture={""}
           onPointerLeaveCapture={""}
           variant="text"
-          color={isScrolling ? "gray" : "white"}
+          color="white"
           onClick={handleOpen}
           className="ml-auto inline-block lg:hidden"
         >
@@ -154,13 +141,12 @@ export function Navbar() {
         </IconButton>
       </div>
       <Collapse open={open}>
-        <div className="container mx-auto mt-4 rounded-lg border-t border-blue-gray-50 bg-white px-6 py-5">
-          <ul className="flex flex-col gap-4 text-blue-gray-900">
+        <div className="container mx-auto mt-4 rounded-lg border-t border-gray-700 bg-gray-900 px-6 py-5">
+          <ul className="flex flex-col gap-4 text-white">
             <NavItem href="#">Home</NavItem>
-            <NavItem href="#about">About Us</NavItem>
-            <NavItem href="#service">Services</NavItem>
-            <NavItem href="#work">Our Work</NavItem>
-            <NavItem href="#contactus">Contact Us</NavItem>
+            <NavItem href="#about">About</NavItem>
+            <NavItem href="#building">What We&apos;re Building</NavItem>
+            <NavItem href="#contactus">Contact</NavItem>
           </ul>
           {/* <div className="hidden gap-2 lg:flex lg:items-center">
 					<IconButton
